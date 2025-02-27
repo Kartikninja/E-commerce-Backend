@@ -1,0 +1,7 @@
+Payment.proto
+
+purchaseSubscriptionRequest
+cancelSubscriptionRequest
+CancelOrderRequest
+ProductPaymentRequest
+PaymentResponse

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= mailTitle %>
+    </title>
+</head>
+
+<body>
+    <div style="font-family: Arial, sans-serif; color: #333;">
+        <h2>SubCategory Removed from Your Store</h2>
+        <p>Dear <%= storeName %>,</p>
+        <p>We regret to inform you that the subcategory <strong>
+                <%= subCategoryName %>
+            </strong> has been removed from your store <strong>
+                <%= storeName %>
+            </strong>.</p>
+        <p><strong>Deleted At:</strong>
+            <%= deletedAt %>
+        </p>
+
+        <p>If you have any questions or need further clarification, please do not hesitate to contact us.</p>
+
+        <footer>
+            <p>&copy; <%= year %>
+                    <%= appName %>. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

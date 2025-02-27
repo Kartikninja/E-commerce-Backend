@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= mailTitle %>
+    </title>
+</head>
+
+<body>
+    <h1>Dear <%= userName %>,</h1>
+
+    <p>We are writing to inform you that your order with order number <strong>
+            <%= orderNumber %>
+        </strong> has been updated. Below are the updated details:</p>
+
+    <h3>Order Status: <%= orderStatus %>
+    </h3>
+
+    <h4>Updated Information:</h4>
+    <ul>
+        <% if (updatedFields.storeId) { %>
+            <li>Store: <%= updatedFields.storeId %>
+            </li>
+            <% } %>
+
+                <% if (updatedFields.shippingAddress) { %>
+                    <li>Shipping Address: <%= updatedFields.shippingAddress %>
+                    </li>
+                    <% } %>
+
+                        <% if (updatedFields.orderStatus) { %>
+                            <li>Order Status: <%= updatedFields.orderStatus %>
+                            </li>
+                            <% } %>
+
+                                <% if (updatedFields.totalPrice) { %>
+                                    <li>Total Price: <%= updatedFields.totalPrice %>
+                                    </li>
+                                    <% } %>
+
+                                        <% if (updatedFields.products && updatedFields.products.length> 0) { %>
+                                            <li>Updated Products: <%= updatedFields.products.length %> items</li>
+                                            <ul>
+                                                <% updatedFields.products.forEach(function(product) { %>
+                                                    <li>
+                                                        <strong>
+                                                            <%= product.productName %>
+                                                        </strong><br>
+                                                        Variant:<%= product.variantName || 'Default Varinat' %> <br>
+                                                            Quantity: <%= product.quantity %><br>
+                                                                Price: $<%= product.price %><br>
+                                                                    <img src="<%= product.productImage %>"
+                                                                        alt="<%= product.productName %>"
+                                                                        style="width: 100px; height: auto;">
+                                                    </li>
+                                                    <% }); %>
+                                            </ul>
+                                            <% } %>
+    </ul>
+
+    <p><strong>Total Price: <%= totalPrice %></strong></p>
+
+    <p>Thank you for shopping with <%= appName %>. If you have any questions or concerns, feel free to reach out to us.
+    </p>
+
+    <footer>
+        <p>&copy; <%= year %>
+                <%= appName %>. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

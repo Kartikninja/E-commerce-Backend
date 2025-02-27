@@ -1,0 +1,73 @@
+pipeline {
+    agent any
+    
+    stages {
+
+        stage('Notify Google Chat for build start') {
+            steps {
+                script {
+                    def googleChatWebhook = 'https://chat.googleapis.com/v1/spaces/AAAAezVsu8k/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=yqTBR-sDlkmHyvlgHU21UsJeyFfZFNCUqc_6GT1zzH0'
+                    def message = 'Build Started for foreplay-app-master-branch\nJob URL: ' + env.BUILD_URL
+
+                    def response = httpRequest(
+                        url: googleChatWebhook,
+                        httpMode: 'POST',
+                        contentType: 'APPLICATION_JSON',
+                        requestBody: "{\"text\":\"${message}\"}"
+                    )
+
+                    echo "Google Chat Notification Response: ${response}"
+                }
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                // Checkout your Node.js project from your VCS (e.g., Git) using credentialsId 
+                checkout([$class: 'GitSCM', 
+                  branches: [[name: '*/master']],
+                  userRemoteConfigs: [[credentialsId: '	f2341fa0-93f6-4fbc-b141-50106416346f', url: 'https://github.com/NinjatechDevOps/forePlay-APP.git']]])
+            }
+        }
+
+        stage('Deploy to Server') {
+            steps {
+                script{
+                    sshagent(credentials: ['c242b6be-9fa2-48bd-8154-d9e7991fa702']) {
+                    def serverIP = '13.201.164.51'
+                    def sshUser = 'ubuntu'
+                    sh """
+                        ssh -o StrictHostKeyChecking=no ${sshUser}@${serverIP} /bin/sh << EOF
+                        cd /home/ubuntu/forePlay-APP
+                        git status
+                        git stash
+                        git pull
+                        npm run build
+                        npm run deploy:prod
+EOF
+                    """
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                def googleChatWebhook = 'https://chat.googleapis.com/v1/spaces/AAAAezVsu8k/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=yqTBR-sDlkmHyvlgHU21UsJeyFfZFNCUqc_6GT1zzH0'
+                def buildStatus = currentBuild.result ?: 'UNKNOWN'
+                def message = "Build ${buildStatus} for foreplay-app-master-branch\nJob URL: ${env.BUILD_URL}"
+
+                def response = httpRequest(
+                    url: googleChatWebhook,
+                    httpMode: 'POST',
+                    contentType: 'APPLICATION_JSON',
+                    requestBody: "{\"text\":\"${message}\"}"
+                )
+
+                echo "Google Chat Notification Response: ${response}"
+            }
+        }
+    }
+}

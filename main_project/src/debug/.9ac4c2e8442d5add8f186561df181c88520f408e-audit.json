@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "D:\\Projects\\nodejs-sample-code\\src\\debug\\.9ac4c2e8442d5add8f186561df181c88520f408e-audit.json",
+    "files": [
+        {
+            "date": 1727439927417,
+            "name": "D:\\Projects\\nodejs-sample-code\\src\\debug\\2024-09-27.log",
+            "hash": "5dc5290f4cdef3e27643157f0876e6ed86b221b7f255f6857e31d01a982368c8"
+        },
+        {
+            "date": 1727767315880,
+            "name": "D:\\Projects\\nodejs-sample-code\\src\\debug\\2024-10-01.log",
+            "hash": "09b9878ffba5969adb7eef0739b3f5453b6e57e18e276785028c5420d6f870a8"
+        }
+    ],
+    "hashType": "sha256"
+}

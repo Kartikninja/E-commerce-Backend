@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= mailTitle %>
+    </title>
+</head>
+
+<body>
+    <div style="font-family: Arial, sans-serif; color: #333;">
+        <h2>SubCategory Updated in Your Store</h2>
+        <p>Dear <%= storeName %>,</p>
+        <p>The subcategory <strong>
+                <%= subCategoryName %>
+            </strong> in your store has been successfully updated.</p>
+        <p><strong>Updated At:</strong>
+            <%= updatedAt %>
+        </p>
+
+        <p>If you have any questions or need further assistance, please contact our support team.</p>
+
+        <footer>
+            <p>&copy; <%= year %>
+                    <%= appName %>. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

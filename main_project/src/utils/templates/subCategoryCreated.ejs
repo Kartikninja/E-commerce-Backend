@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= mailTitle %>
+    </title>
+</head>
+
+<body>
+    <div style="font-family: Arial, sans-serif; color: #333;">
+        <h2>New SubCategory Added to Your Store</h2>
+        <p>Dear <%= storeName %>,</p>
+        <p>We are happy to inform you that a new subcategory has been added to your store <strong>
+                <%= storeName %>
+            </strong>.</p>
+        <p><strong>SubCategory Name:</strong>
+            <%= subCategoryName %>
+        </p>
+        <p><strong>Created At:</strong>
+            <%= createdAt %>
+        </p>
+
+        <p>If you have any questions, feel free to reach out to our support team.</p>
+
+        <footer>
+            <p>&copy; <%= year %>
+                    <%= appName %>. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

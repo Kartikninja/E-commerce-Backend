@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Subscription Cancellation</title>
+</head>
+
+<body>
+    <h2>Subscription Cancellation Confirmation</h2>
+    <p>Dear <%= customerName %>,</p>
+    <p>We are sorry to see you go. Your subscription with ID <strong>
+            <%= subscriptionId %>
+        </strong> has been successfully canceled.</p>
+    <p><strong>Transaction ID:</strong>
+        <%= transactionId %>
+    </p>
+    <p><strong>Refund Amount:</strong> $<%= refundAmount %>
+    </p>
+    <p><strong>Cancellation Reason:</strong>
+        <%= cancellationReason %>
+    </p>
+    <p>If you have any questions, please contact our support team.</p>
+    <p>Best regards,</p>
+    <p>
+        <%= appName %> Team
+    </p>
+</body>
+
+</html>

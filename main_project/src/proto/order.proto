@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package order;
+
+service OrderService {
+  rpc PaymentStatusUpdate (PaymentStatusRequest) returns (PaymentStatusResponse);
+}
+
+
+
+
+  message PaymentStatusRequest {
+  string orderId = 1;
+  string paymentId = 2;
+  string status = 3;
+  string event=4;
+}
+
+
+
+
+// message PaymentPayload {
+//   PaymentEntity payment = 1;
+//   OrderEntity order = 2;
+// }
+// message PaymentEntity {
+//   string id = 1;
+//   string entity = 2;
+//   string status = 3;
+//   string order_id = 4;
+//   int64 amount = 5;
+//   string currency = 6;
+//   string method = 7;
+//   string email = 8;
+//   string contact = 9;
+//   string created_at = 10;
+// }
+
+// message OrderEntity {
+//   string id = 1;
+//   string entity = 2;
+//   string status = 3;
+//   int64 amount = 4;
+//   string currency = 5;
+//   string receipt = 6;
+//   string created_at = 7;
+// }
+
+message PaymentStatusResponse {
+  string message = 1;
+  string statusMessage = 2;
+}
+
+// syntax = "proto3";
+
+// package order;
+
+// service PaymentService {
+//   rpc CreateRazorpayOrder (CreatePaymentRequest) returns (CreatePaymentResponse);
+
+//   rpc PaymentStatusUpdate (PaymentStatusRequest) returns (PaymentStatusResponse);
+// }
+
+// message CreatePaymentRequest {
+//   double amount = 1;
+//   string userId = 2;
+//   string paymentMethod = 3;
+//   string modelName = 4;
+// }
+
+// message CreatePaymentResponse {
+//   string orderId = 1;
+//   double amount = 2;
+// }
+
+// message PaymentStatusRequest {
+//   string orderId = 1;
+//   string paymentId = 2;
+//   string status = 3;
+// }
+
+// message PaymentStatusResponse {
+//   string message = 1;
+//   string statusMessage = 2;
+// }

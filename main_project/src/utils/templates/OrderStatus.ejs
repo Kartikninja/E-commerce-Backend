@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= mailTitle %>
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555555;
+        }
+
+        .order-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .order-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-details th,
+        .order-details td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777777;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <%= mailTitle %>
+        </h1>
+        <p>Dear <%= userName %>,</p>
+        <p>We are writing to inform you that your order <strong>#<%= orderNumber %></strong> has been updated to the
+            status: <strong>
+                <%= orderStatus %>
+            </strong>.</p>
+
+        <div class="order-details">
+            <h2>Order Details</h2>
+            <table>
+                <tr>
+                    <th>Order Number</th>
+                    <td>
+                        <%= orderNumber %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>
+                        <%= orderStatus %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total Price</th>
+                    <td>$<%= price.toFixed(2) %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <p>If you have any questions or need further assistance, feel free to contact us.</p>
+        <p>Thank you for shopping with <%= appName %>!</p>
+
+        <div class="footer">
+            <p>&copy; <%= year %>
+                    <%= appName %>. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>

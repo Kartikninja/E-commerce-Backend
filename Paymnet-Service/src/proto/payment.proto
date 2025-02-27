@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package payment;
+
+service PaymentService {
+  rpc CreateRazorpayOrder (PaymentOrderRequest) returns (PaymentOrderResponse);
+
+  rpc VerifyWebhook (WebhookRequest) returns (WebhookResponse);
+
+  rpc PaymentStatusUpdate(PaymentStatusRequest) returns (PaymentStatusResponse);
+
+  rpc CancelOrder (CancelOrderRequest) returns (CancelOrderResponse);
+
+    rpc CreateSubscriptionPlan (SubscriptionRequest) returns (SubscriptionResponse);
+rpc CancelSubscription (CancelSubscriptionRequest) returns (CancelSubscriptionResponse);
+
+
+}
+
+message CancelSubscriptionRequest {
+    string razorpaySubscriptionId = 1;
+}
+
+message CancelSubscriptionResponse {
+    bool success = 1;
+    string message = 2;
+     string status=3;
+}
+
+
+message SubscriptionRequest{
+  string period=1;
+  int32 interval=2;
+  string name=3;
+  int64 amount=4;
+  string currency=5;
+  string description=6;
+}
+
+message SubscriptionResponse{
+  string planId=1;
+  string status=2;
+
+}
+
+
+message CancelOrderRequest{
+ string paymentId = 1;
+  int64 amount = 2; 
+  map<string, string> notes = 3;
+}
+
+message CancelOrderResponse{
+   bool success = 1;
+  string refundId = 2;
+   string status = 3;
+  string message = 4;
+}
+
+message PaymentOrderRequest {
+  double amount = 1;
+  string userId = 2;
+  string paymentMethod = 3;
+  string modelName = 4;
+}
+
+message PaymentOrderResponse {
+  string orderId = 1;
+  double amount = 2;
+}
+
+message WebhookRequest {
+  string razorpayOrderId = 1;
+  string razorpayPaymentId = 2;
+  string status = 3;
+  string userId = 4;
+  string eventTimestamp = 5;
+}
+
+message WebhookResponse {
+  string message = 1;
+}
+
+  message PaymentStatusRequest {
+  string orderId = 1;
+  string paymentId = 2;
+  string status = 3;
+  string event=4;
+  oneof extra_data {
+    RefundData refund = 5;
+  }
+}
+
+
+message RefundData {
+  string refund_id = 1;
+  float refund_amount = 2;
+  string refund_status = 3;
+  repeated string eligible_product_ids = 4;
+}
+
+
+message PaymentPayload {
+  PaymentEntity payment = 1;
+  OrderEntity order = 2;
+}
+message PaymentEntity {
+  string id = 1;
+  string entity = 2;
+  string status = 3;
+  string order_id = 4;
+  int64 amount = 5;
+  string currency = 6;
+  string method = 7;
+  string email = 8;
+  string contact = 9;
+  string created_at = 10;
+}
+
+message OrderEntity {
+  string id = 1;
+  string entity = 2;
+  string status = 3;
+  int64 amount = 4;
+  string currency = 5;
+  string receipt = 6;
+  string created_at = 7;
+}
+
+message PaymentStatusResponse {
+  string message = 1;
+  string statusMessage = 2;
+}
+
+
+
+

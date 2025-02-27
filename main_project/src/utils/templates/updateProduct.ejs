@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= mailTitle %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= mailTitle %>
+    </h1>
+    <p>Dear <%= storeName %>,</p>
+    <p>The product <strong>
+            <%= productName %>
+        </strong> has been updated in your store under the subcategory <strong>
+            <%= subCategoryName %>
+        </strong>.</p>
+    <p>Store ID: <%= storeId %>
+    </p>
+    <p>Updated At: <%= updatedAt %>
+    </p>
+    <footer>
+        <p>&copy; <%= year %>
+                <%= appName %>. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

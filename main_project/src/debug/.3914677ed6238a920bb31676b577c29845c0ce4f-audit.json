@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "D:\\Projects\\Get Estimation\\get-estimation-backend\\src\\debug\\.3914677ed6238a920bb31676b577c29845c0ce4f-audit.json",
+    "files": [
+        {
+            "date": 1727782433918,
+            "name": "D:\\Projects\\Get Estimation\\get-estimation-backend\\src\\debug\\2024-10-01.log",
+            "hash": "9973d8c59a5a8f8694d5e5a3ef7b5336d87a151fe4dc130e20edf8546a0de8a5"
+        }
+    ],
+    "hashType": "sha256"
+}

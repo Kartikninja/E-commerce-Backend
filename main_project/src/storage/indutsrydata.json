@@ -1,0 +1,153 @@
+[
+  {
+    "name": "E-Commerce1",
+    "description": "Platforms for buying and selling goods online, including marketplaces and individual stores.",
+    "imageUrl": "ecommerce_img_url",
+
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Healthcare",
+    "description": "Apps and platforms for medical services, health tracking, patient-doctor interactions, and telemedicine.",
+    "imageUrl": "healthcare_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "FinfhuhgTech",
+    "description": "Applications for banking, personal finance, investments, and cryptocurrency management.",
+    "imageUrl": "fintech_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Education",
+    "description": "Online learning platforms, course management systems, and tutoring apps.",
+    "imageUrl": "education_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Streaming",
+    "description": "Platforms for streaming audio and video content, including movies, TV shows, and music.",
+    "imageUrl": "streaming_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Travel",
+    "description": "Apps for booking flights, hotels, and transportation, as well as travel planning.",
+    "imageUrl": "travel_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Real Estate",
+    "description": "Platforms for buying, selling, and renting properties, including home search and virtual tours.",
+    "imageUrl": "realestate_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Food Delivery",
+    "description": "Apps for ordering food from local restaurants and having it delivered to your door.",
+    "imageUrl": "fooddelivery_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Fitness",
+    "description": "Apps for tracking workouts, offering fitness plans, and promoting healthy living.",
+    "imageUrl": "fitness_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Social Media",
+    "description": "Platforms for social interaction, including content sharing, messaging, and networking.",
+    "imageUrl": "socialmedia_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Gaming",
+    "description": "Applications for mobile and web-based games, including social games and puzzles.",
+    "imageUrl": "gaming_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Rental",
+    "description": "Apps for renting items, vehicles, or properties, including cab booking and short-term rentals.",
+    "imageUrl": "rental_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Banking",
+    "description": "Mobile banking platforms, providing users with access to account management and financial services.",
+    "imageUrl": "banking_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Retail",
+    "description": "Retail-specific apps that provide shopping experiences tailored to individual stores or chains.",
+    "imageUrl": "retail_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  },
+  {
+    "name": "Music",
+    "description": "Music streaming and management platforms, offering access to large libraries of audio content.",
+    "imageUrl": "music_img_url",
+    "baseCostRange": {
+      "minCost": 1000,
+      "maxCost": 5000
+    },
+    "isActive": true
+  }
+]
